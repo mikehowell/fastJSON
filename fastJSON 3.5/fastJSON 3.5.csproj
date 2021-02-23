@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{207E91B1-C9F8-4913-88E1-3549EF5F3273}</ProjectGuid>
+    <ProjectGuid>{FDAF5695-E651-4D4D-8E15-0BD9FBEF5069}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>fastJSON</RootNamespace>
     <AssemblyName>fastJSON</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
@@ -47,20 +47,21 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>Full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\output\net40\</OutputPath>
+    <OutputPath>..\output\net35\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;DEBUG;NET4</DefineConstants>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\output\net40\</OutputPath>
+    <OutputPath>..\output\net35\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>NET4</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
@@ -74,31 +75,15 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>TRACE;NET4</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>fastJSON.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\fastJSON\fastJSON.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="dynamic.cs" />
-    <Compile Include="Getters.cs" />
-    <Compile Include="Formatter.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="JsonSerializer.cs" />
-    <Compile Include="JSON.cs" />
-    <Compile Include="JsonParser.cs" />
-    <Compile Include="Reflection.cs" />
-    <Compile Include="SafeDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -123,11 +108,36 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\fastJSON.nuspec">
-      <Link>fastJSON.nuspec</Link>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="fastJSON.snk" />
+    <Compile Include="..\fastJSON\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\dynamic.cs">
+      <Link>dynamic.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\Formatter.cs">
+      <Link>Formatter.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\Getters.cs">
+      <Link>Getters.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\Helper.cs">
+      <Link>Helper.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\JSON.cs">
+      <Link>JSON.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\JsonParser.cs">
+      <Link>JsonParser.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\JsonSerializer.cs">
+      <Link>JsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\Reflection.cs">
+      <Link>Reflection.cs</Link>
+    </Compile>
+    <Compile Include="..\fastJSON\SafeDictionary.cs">
+      <Link>SafeDictionary.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -1,3 +1,95 @@
+2.4.0.3 * 
+- bug fix edge case for deserialize
+
+2.4.0.2 
+- numbers > 32 chars treated as double
+
+2.4.0.1
+- bug fix json5 line break
+- support for json5 +NaN -NaN
+
+2.4.0
+- dotnet 5.0 build  
+- debug and release configs working
+- json5 support
+  (nan, infinity, leading/trailing decimal, trailing comma, string escapes, single/double quotes
+   positive/negative prefix, comments, hex numbers, multi line string breaks)
+
+2.3.5.3
+- bug fix BuildLookup() 
+
+2.3.5.2
+- bug fix endless loop parsing recursive types
+
+2.3.5.1
+- added nuget package for nunit to the test project
+- code cleanup
+
+2.3.5
+- optimized the parser for skipping when type provided and $types not in json 
+
+2.3.3
+- removed racist term from code
+- add fastSJON.DataMember attribute for .net v2+
+
+2.3.2
+- added JSONParameters.FullyQualifiedDataSetSchema for edge case datasets
+- badlist type checking in DataTable 
+- fix for null values for objects (thanks to ADLER1)
+
+2.3.1
+- optimized bad list checking
+- fixed dotnet core project to use AssemblyInfo.cs
+
+2.3.0
+- bug fix reading a negative number in int[]
+- bug fix object equality hash code checking with JSONParameters.OverrideObjectHashCodeChecking (thanks to MTantos1)
+- added JSONParameters.BadListTypeChecking default true for friday 13th json attack checking
+
+2.2.5
+- bug fix ShowReadOnlyProperties and fields
+- bug fix ToJSON() and changing ShowReadOnlyProperties per call on a type
+
+2.2.4
+- optimized CreateLong() and CreateInteger() (thanks to djmarcus)
+
+2.2.3.1
+- made JSONParameters.MakeCopy() public 
+
+2.2.3
+- bug fix deserialize Dictionary<int,List<X>> without extensions (thanks to Ondrej Medek)
+- bug fix deserialize Dictionary<int,X[]> without extensions 
+
+2.2.2
+- thread safe json formatter (thanks to Ondrej Medek)
+
+2.2.1
+- added JSONParameters.AutoConvertStringToNumbers to control the auto conversion, if false you will get an exception 
+- fixed file names in nuget package on linux 
+
+2.2.0
+- fixed json parser to create a decimal number if the string does not have an exponent
+- fixed fast creating lists without capacity constructor 
+- unified Reflection.cs 
+- * breaking runtime change if using RegisterCustomType() *
+
+2.1.36
+- optimization tweaks ~30% boost on deserialize
+- changed internal tolower to tolowerinvariant 
+- internal json parser fixed char pointer
+- internal reflection struct to class
+
+2.1.35
+- moved .net 3.5 project to own folder to mitigate conflicting obj builds
+
+2.1.34
+- ability to create internal/private objects (removed the public access restriction on classes)
+
+2.1.33
+- case insensitive enum (thanks to AgentFire)
+- auto covert to boolean (number >0 , string : 1, true, yes, on)
+- fixed .net 3.5 project output framework version
+
 2.1.32
 - Non public setter / readonly property support (thanks to rbeurskens)
 - unify reflection.cs with fastBinaryJSON
